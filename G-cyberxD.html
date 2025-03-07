@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerald's Website</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="banner-image.jpg" alt="Banner Image">
+            <div class="banner-text">
+                <span>Student Index Number:</span> 4091824
+                <span>Name:</span> Gerald Arthur
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="button-container">
+            <button class="btn" id="bio-btn">My Biography</button>
+            <button class="btn" id="reason-btn">Reason for Choosing Course</button>
+        </div>
+        <div class="popup-container" id="popup-container">
+            <div class="popup" id="popup">
+                <p id="bio-text"></p>
+                <p id="reason-text"></p>
+            </div>
+        </div>
+    </main>
+    <script>
+        const bioBtn = document.getElementById('bio-btn');
+        const reasonBtn = document.getElementById('reason-btn');
+        const popupContainer = document.getElementById('popup-container');
+        const popup = document.getElementById('popup');
+        const bioText = document.getElementById('bio-text');
+        const reasonText = document.getElementById('reason-text');
+
+        bioBtn.addEventListener('click', () => {
+            popupContainer.style.display = 'block';
+            popup.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                popup.style.transform = 'translateX(0)';
+            }, 500);
+            bioText.textContent = "I'm Gerald Arthur,17 years old and I reside at Kokoben Anyinam. I have no siblings,like to play games,basketball and have an interest in programming"; 
+        });
+
+        reasonBtn.addEventListener('click', () => {
+            popupContainer.style.display = 'block';
+            popup.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                popup.style.transform = 'translateX(0)';
+            }, 500);
+            reasonText.textContent = 'Back then when i was a toddler, i dreamt of being a doctor just like almost every kid. But then as time went on,i realized that the world is moving into an era full of technology so i decided to "hop on the trend" by engaging in anything computer or software related. Which led me to choosing Computer Engineering.'; 
+        });
+
+        popupContainer.addEventListener('click', (e) => {
+            if (e.target === popupContainer) {
+                popupContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
